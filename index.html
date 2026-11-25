@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gathering Night — Duta Pemuda Kebudayaan Bojonegoro</title>
+  <meta name="description" content="Undangan Malam Keakraban Gathering Night Duta Pemuda Kebudayaan Bojonegoro, Sabtu 28 November 2026 di IKIP Bojonegoro." />
+
+  <!-- Open Graph untuk Preview Link saat Dikirim di WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gathering Night — Duta Pemuda Kebudayaan Bojonegoro" />
+  <meta property="og:description" content="Malam Keakraban • Sabtu, 28 November 2026 • IKIP Bojonegoro (18.30–19.50 WIB)" />
+  <meta property="og:image" content="assets/audio/images/hero-bg.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Layer Bintang Berkedip Terus-Menerus di Seluruh Halaman -->
+  <canvas id="starfieldCanvas" aria-hidden="true"></canvas>
+
+  <!-- Audio Latar Belakang -->
+  <audio id="bgMusic" src="assets/audio/images/bgm.mp3" loop preload="auto"></audio>
+
+  <!-- Tombol Kontrol Musik Melayang -->
+  <button id="musicToggle" class="music-toggle is-hidden" type="button" aria-label="Kontrol Musik Latar" title="Putar / Jeda Musik">
+    <span class="music-icon" id="musicIcon">♪</span>
+    <span class="music-label" id="musicLabel">Musik Aktif</span>
+  </button>
+
+  <!-- Opening Gate / Cover Undangan (Membuka Undangan & Memulai Musik) -->
+  <div id="invitationGate" class="invitation-gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="gate-backdrop"></div>
+    <div class="gate-content">
+      <p class="gate-kicker">MALAM KEAKRABAN • 28 NOVEMBER 2026</p>
+      <img
+        class="gate-recipient-photo"
+        src="assets/audio/images/foto-kak-andika.png"
+        alt="Foto Kak Andika"
+      />
+      <p class="gate-recipient">Kepada Yth.</p>
+      <p class="gate-recipient-name">Kak Andika</p>
+      <h1 id="gateTitle" class="gate-title">Gathering Night</h1>
+      <p class="gate-subtitle">Duta Pemuda Kebudayaan Bojonegoro</p>
+      <div class="gold-divider"><span>✦</span></div>
+      <p class="gate-venue">IKIP Bojonegoro • 18.30 – 19.50 WIB</p>
+      <button id="openInvitationBtn" class="btn-gold btn-open-gate" type="button">
+        <span>Buka Undangan &amp; Putar Musik</span>
+        <span class="btn-shine" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Konten Utama Undangan -->
+  <main id="invitationMain" class="invitation-main">
+    <!-- HERO SECTION -->
+    <header id="hero" class="hero-section">
+      <div class="hero-media">
+        <img src="assets/audio/images/hero-bg.jpg" alt="Suasana Malam Gathering Night Duta Pemuda Kebudayaan Bojonegoro" class="hero-img" />
+        <div class="hero-vignette"></div>
+      </div>
+
+      <div class="container hero-inner reveal">
+        <span class="badge-gold">MALAM KEAKRABAN • SABTU, 28 NOVEMBER 2026</span>
+        <h1 class="hero-title">GATHERING NIGHT</h1>
+        <p class="hero-org">Duta Pemuda Kebudayaan Bojonegoro</p>
+        <p class="hero-desc">
+          Merajut hangatnya kebersamaan, merayakan semangat budaya, dan memperkuat ikatan persaudaraan dalam satu malam penuh makna.
+        </p>
+        <div class="hero-actions">
+          <a href="#details" class="btn-gold">Lihat Detail Acara</a>
+          <a href="#rundown" class="btn-outline-gold">Rundown Lengkap</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 2: SAMBUTAN & ESENSI ACARA -->
+    <section id="about" class="section-block about-section">
+      <div class="container about-grid">
+        <div class="about-frame-wrap reveal">
+          <div class="luxury-frame">
+            <img src="assets/audio/images/about-frame.jpg" alt="Kebersamaan Duta Pemuda Kebudayaan Bojonegoro" />
+          </div>
+          <div class="frame-caption">Ruang Silaturahmi &amp; Apresiasi Budaya</div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">ESENSI MALAM KEAKRABAN</span>
+          <h2 class="section-heading">Hangat dalam Kebersamaan,<br />Kuat dalam Jati Diri</h2>
+          <div class="gold-line-left"></div>
+          <p>
+            <strong>Gathering Night</strong> hadir sebagai momen keakraban bagi keluarga besar <strong>Duta Pemuda Kebudayaan Bojonegoro</strong> untuk saling menyapa, berbagi cerita perjalanan, serta mempererat solidaritas lintas peran di luar kesibukan agenda.
+          </p>
+          <p>
+            Dalam balutan suasana malam yang hangat dan penuh kekeluargaan, setiap percakapan, tawa, hingga prosesi simbolis menjadi pengikat langkah bersama menjaga marwah kebudayaan daerah.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DETAIL WAKTU, VENUE & DRESS CODE -->
+    <section id="details" class="section-block details-section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">INFORMASI UTAMA</span>
+          <h2 class="section-heading">Waktu, Lokasi &amp; Ketentuan</h2>
+          <div class="gold-divider"><span>✦</span></div>
+        </div>
+
+        <div class="info-grid">
+          <article class="luxury-card reveal">
+            <div class="card-icon">🗓️</div>
+            <h3 class="card-title">Hari &amp; Tanggal</h3>
+            <p class="card-highlight">Sabtu, 28 November 2026</p>
+            <p class="card-sub">Malam Keakraban Duta Pemuda Kebudayaan Bojonegoro</p>
+          </article>
+
+          <article class="luxury-card reveal">
+            <div class="card-icon">🕰️</div>
+            <h3 class="card-title">Waktu &amp; Kumpul</h3>
+            <p class="card-highlight">Registrasi: 18.30 – 18.40 WIB</p>
+            <p class="card-sub">Rangkaian acara: 18.30 – 19.50 WIB (80 menit) • Briefing Panitia 17.30 WIB</p>
+          </article>
+
+          <article class="luxury-card reveal">
+            <div class="card-icon">📍</div>
+            <h3 class="card-title">Tempat Acara (Venue)</h3>
+            <p class="card-highlight">IKIP Bojonegoro</p>
+            <p class="card-sub">Kabupaten Bojonegoro, Jawa Timur</p>
+          </article>
+
+          <article class="luxury-card reveal">
+            <div class="card-icon">✨</div>
+            <h3 class="card-title">Dress Code</h3>
+            <p class="card-highlight">Menyesuaikan Acara</p>
+            <p class="card-sub">Rapi, sopan, dan nyaman untuk mengikuti rangkaian malam keakraban</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SOROTAN MOMEN SPESIAL -->
+    <section id="highlights" class="section-block highlights-section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">SOROTAN RANGKAIAN</span>
+          <h2 class="section-heading">Momen Spesial Malam Ini</h2>
+          <div class="gold-divider"><span>✦</span></div>
+        </div>
+
+        <div class="spotlight-grid">
+          <article class="spotlight-card reveal">
+            <div class="spotlight-img-wrap">
+              <img src="assets/audio/images/dance-alfino.jpg" alt="Penampilan tari tradisional" />
+              <div class="spotlight-overlay"></div>
+              <span class="spotlight-time">18.50 – 19.00 WIB</span>
+            </div>
+            <div class="spotlight-body">
+              <h3>Tari Tradisional</h3>
+              <p>Special Dance Performance yang membuka energi malam penuh gerak ekspresif dan nuansa budaya.</p>
+            </div>
+          </article>
+
+          <article class="spotlight-card reveal">
+            <div class="spotlight-img-wrap">
+              <img src="assets/audio/images/sing-diva.jpg" alt="Hiburan sing song" />
+              <div class="spotlight-overlay"></div>
+              <span class="spotlight-time">19.15 – 19.20 WIB</span>
+            </div>
+            <div class="spotlight-body">
+              <h3>Hiburan (Sing Song)</h3>
+              <p>Special Singing Performance dengan alunan vokal yang menghangatkan suasana keakraban.</p>
+            </div>
+          </article>
+
+          <article class="spotlight-card reveal">
+            <div class="spotlight-img-wrap">
+              <img src="assets/audio/images/gallery-3.jpg" alt="Foto bersama di akhir acara" />
+              <div class="spotlight-overlay"></div>
+              <span class="spotlight-time">19.40 – 19.50 WIB</span>
+            </div>
+            <div class="spotlight-body">
+              <h3>Penutup &amp; Foto Bersama</h3>
+              <p>Menutup rangkaian acara dengan mengabadikan momen kebersamaan.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: RUNDOWN ACARA LENGKAP -->
+    <section id="rundown" class="section-block rundown-section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">SUSUNAN ACARA</span>
+          <h2 class="section-heading">Rundown Gathering Night</h2>
+          <p class="section-subtitle">Total durasi acara: 80 menit (18.30–19.50 WIB) • Lokasi: IKIP Bojonegoro</p>
+          <div class="gold-divider"><span>✦</span></div>
+        </div>
+
+        <div class="rundown-filters reveal" role="tablist" aria-label="Filter Rundown Acara">
+          <button class="filter-btn is-active" data-filter="all" type="button">Semua Sesi</button>
+          <button class="filter-btn" data-filter="prep" type="button">Briefing (17.30)</button>
+          <button class="filter-btn" data-filter="core-early" type="button">18.30 – 19.00</button>
+          <button class="filter-btn" data-filter="core-mid" type="button">19.00 – 19.20</button>
+          <button class="filter-btn" data-filter="core-end" type="button">19.20 – 19.50</button>
+        </div>
+
+        <div class="timeline-list">
+          <div class="timeline-item reveal" data-group="prep">
+            <div class="timeline-time">17.30–18.00</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Briefing Panitia</h3>
+                <span class="tag-pill">Persiapan</span>
+              </div>
+              <p>Persiapan dan koordinasi acara</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-group="core-early">
+            <div class="timeline-time">18.30–18.40</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Registrasi Peserta</h3>
+                <span class="tag-pill">Registrasi</span>
+              </div>
+              <p>Penyambutan peserta</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-group="core-early">
+            <div class="timeline-time">18.40–18.50</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Opening Ceremony</h3>
+              </div>
+              <p>Pembukaan oleh MC</p>
+            </div>
+          </div>
+
+          <div class="timeline-item is-featured reveal" data-group="core-early">
+            <div class="timeline-time">18.50–19.00</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Tari Tradisional</h3>
+                <span class="tag-gold">Traditional Dance Performance</span>
+              </div>
+              <p>Penampilan tari tradisional</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-group="core-mid">
+            <div class="timeline-time">19.00–19.05</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Sambutan Panitia Acara</h3>
+              </div>
+              <p>Sambutan dari panitia acara</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-group="core-mid">
+            <div class="timeline-time">19.05–19.15</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Sambutan City Director</h3>
+              </div>
+              <p>Sambutan dan arahan</p>
+            </div>
+          </div>
+
+          <div class="timeline-item is-featured reveal" data-group="core-mid">
+            <div class="timeline-time">19.15–19.20</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Hiburan (Sing Song)</h3>
+                <span class="tag-gold">Special Singing Performance</span>
+              </div>
+              <p>Sesi sing song bersama</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-group="core-end">
+            <div class="timeline-time">19.20–19.40</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Acara Inti: Sharing &amp; Doa Bersama</h3>
+              </div>
+              <p>Berbagi cerita dan memanjatkan doa bersama</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal" data-group="core-end">
+            <div class="timeline-time">19.40–19.50</div>
+            <div class="timeline-content">
+              <div class="timeline-title-row">
+                <h3>Penutup &amp; Foto Bersama</h3>
+              </div>
+              <p>Penutupan acara dan foto bersama</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: GALERI ELEMEN VISUAL -->
+    <section id="gallery" class="section-block gallery-section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">ELEMEN VISUAL</span>
+          <h2 class="section-heading">Nuansa &amp; Kebersamaan</h2>
+          <div class="gold-divider"><span>✦</span></div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img src="assets/audio/images/gallrey-1.jpg" alt="Momen keakraban dan kebersamaan" />
+            <figcaption>Keakraban &amp; Tawa Bersama</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/audio/images/gallery-2.jpg" alt="Detail elemen budaya dan ornamen" />
+            <figcaption>Detail &amp; Ornamen Budaya</figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="assets/audio/images/gallery-3.jpg" alt="Momen penutupan penuh kehangatan" />
+            <figcaption>Jejak Hangat Malam Penuh Makna</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: BAGIKAN UNDANGAN -->
+    <section id="rsvp" class="section-block rsvp-section">
+      <div class="container">
+        <div class="rsvp-box reveal">
+          <span class="eyebrow">BAGIKAN UNDANGAN</span>
+          <h2 class="section-heading">Siap Hadir di Malam Keakraban?</h2>
+          <p class="rsvp-desc">
+            Sabtu, 28 November 2026 • Registrasi 18.30–18.40 WIB di IKIP Bojonegoro • Dress Code: Menyesuaikan Acara.
+          </p>
+
+          <div class="share-link-box">
+            <input id="invitationLinkInput" type="text" readonly aria-label="Link Undangan" />
+            <button id="copyLinkBtn" type="button" class="btn-outline-gold btn-share-action">
+              Salin Link
+            </button>
+          </div>
+
+          <a id="shareWhatsAppLinkBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold btn-rsvp-submit">
+            <span>Bagikan Link Undangan via WhatsApp</span>
+          </a>
+
+          <p id="copyFeedback" class="copy-feedback" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+    
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">GATHERING NIGHT • DUTA PEMUDA KEBUDAYAAN BOJONEGORO</p>
+      <p class="footer-meta">Sabtu, 28 November 2026 • IKIP Bojonegoro • Dress Code: Menyesuaikan Acara</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
